@@ -43,6 +43,7 @@ Then go back to working directory
 ### Step 3.
 
 __To create a project__
+
 1. `project create <project name> <description> <private (True/False)> <homepage url>`
 
  Example:
@@ -78,6 +79,7 @@ __To create a project__
 __Now that's marvelous!!__
 
 __To print names of projects existing in your PROJECT_PATH__
+
 2. `project list`
  
 Example:
@@ -90,6 +92,7 @@ Example:
     5. Shell Python Project Automation
 
 __To delete a project__
+
 3. `project delete <project name>`
 
 Example:
@@ -98,6 +101,7 @@ Example:
     Project "new project" is deleted successfully
 
 __To print repository details__
+
 4. `project repo <repo name>`
  
 Example:
@@ -133,6 +137,7 @@ Example:
     =======================================
 
 __To list all repositories__
+
 5. `project repo list`
  
 Example:
@@ -152,6 +157,7 @@ Example:
     12. Shell-Python-Project-Automation
 
 __To delete a repository__
+
 6. `project repo delete <repository name>`
  
 Example:
@@ -159,8 +165,8 @@ Example:
     $ project repo delete new project
     Repository "new project" is deleted successfully
 
-__7.__ For help you can run
+__For help you can run__
 
-    $ project help
+7. `project help`
 
 # __Your Welcome__
