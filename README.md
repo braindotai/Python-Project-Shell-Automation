@@ -5,7 +5,7 @@ This project is inspired by __Kalle Hallden__
 - [Youtube](https://www.youtube.com/watch?v=7Y8Ppin12r4)
 - [Github](https://github.com/KalleHallden/ProjectInitializationAutomation)
 
-In this repo I've provided my version of that shell python project automation, lets get started.
+In this repo I've provided my version of shell automation for python projects, lets get started.
 
 ## Usage
 
