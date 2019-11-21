@@ -11,7 +11,7 @@ In this repo I've provided my version of that shell python project automation, l
 
 ### Requirements
 
-- Install VS Code
+- Install [VS Code](https://code.visualstudio.com/download)
 - If you are using windows, download [Git](https://git-scm.com/download/win), which will install Git Bash as well. Then open Git Bash and run following commands
 
 ### Step 1.
@@ -43,11 +43,27 @@ Then go back to working directory
 ### Step 3.
 
 __To create a project__
-1. `project create`: To create a new project
+1. `project create <project name> <description> <private (True/False)> <homepage url>`: To create a new project
 
  Example:
 
- project create "new project" "this is my description" "private(True or False)" "homepage(https://mywebsitename.com)"
+    $ project create "new project" "this is my description" "False"
+
+    ============= Initiating project: new project =============
+
+    Initialized empty Git repository in C:/Users/brain/Desktop/Projects/new project/.git/
+    [master (root-commit) 3255f0d] Initial Commit
+    1 file changed, 0 insertions(+), 0 deletions(-)
+    create mode 100644 README.md
+    Enumerating objects: 3, done.
+    Counting objects: 100% (3/3), done.
+    Writing objects: 100% (3/3), 222 bytes | 222.00 KiB/s, done.
+    Total 3 (delta 0), reused 0 (delta 0)
+    To https://github.com/braindotai/new-project.git
+    * [new branch]      master -> master
+    Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+    ============= Project initiated successfully =============
 
 - This creates a project named "new project" in your "PROJECT_PATH"
 - And sets that directory as github master repository
@@ -58,40 +74,88 @@ __To create a project__
 - Then push the initial commit to master repo
 - Then opens the VS Code through that project directory
 
+
 __Now that's marvelous!!__
 
 __2.__ `project list`: To print names of projects existing in your PROJECT_PATH
  
 Example:
  
-    project list
+    $ project list
+    1. Custom-Linux-Command-Creator
+    2. Deep-Learning-Scratch-Arena
+    3. Dr-Deep
+    4. Kaggle-Exploratory-Data-Analysis
+    5. Shell Python Project Automation
 
-__3.__ `project delete`: To delete a project
+__3.__ `project delete <project name>`: To delete a project
 
 Example:
  
-    project delete <project name>
+    $ project delete new project
+    Project "new project" is deleted successfully
 
-__4.__ `project repo`: To print repository details
+__4.__ `project repo <repo name>`: To print repository details
  
 Example:
  
-    project repo <repo name>
+    $ project repo dr deep
+
+    =============== dr deep ===============
+    Contents:
+        .gitignore
+        Blood Cells
+        Breast Cancer
+        Heart Attack
+        LICENSE
+        README.md
+        Retinal OCT
+        Skin Cancer
+        Tuberculosis
+        samples
+
+    Branches:
+        master
+
+    Issues: 0
+    Private: False
+    Starts: 0
+    Forked False
+    Forks: 0
+    Watchers: 0
+    Language: Python
+    Owner: braindotai
+    URL: https://github.com/braindotai/Dr-Deep
+    SSH URL: git@github.com:braindotai/Dr-Deep.git
+    =======================================
 
 __5.__ `project repo list`: To list all repositories
  
 Example:
  
-    project repo list
+    $ project repo list
+    1. Custom-Linux-Command-Creator
+    2. Deep-Learning-Scratch-Arena
+    3. Dr-Deep
+    4. Dxeon
+    5. incubator-mxnet
+    6. Kaggle-Exploratory-Data-Analysis
+    7. KDD18-Gluon
+    8. MXNet-Gluon-Tutorials
+    9. pandas-videos
+    10. reinforcement-learning
+    11. Reinforcement-Learning-Scratch-Arena
+    12. Shell-Python-Project-Automation
 
-__6.__ `project repo delete`: To delete a repository
+__6.__ `project repo delete <repository name>`: To delete a repository
  
 Example:
  
-    project repo delete <repository name>
+    $ project repo delete new project
+    Repository "new project" is deleted successfully
 
 __7.__ For help you can run
 
-    project help
+    $ project help
 
 # __Your Welcome__
