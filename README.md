@@ -42,9 +42,9 @@ Then go back to working directory
 
 ### Step 3.
 
-__To create a project__
+1. __To create a project__
 
-1. `project create <project name> <description> <private (True/False)> <homepage url>`
+   `project create <project name> <description> <private (True/False)> <homepage url>`
 
  Example:
 
@@ -78,9 +78,9 @@ __To create a project__
 
 __Now that's marvelous!!__
 
-__To print names of projects existing in your PROJECT_PATH__
+2. __To print names of projects existing in your PROJECT_PATH__
 
-2. `project list`
+   `project list`
  
 Example:
  
@@ -91,18 +91,18 @@ Example:
     4. Kaggle-Exploratory-Data-Analysis
     5. Shell Python Project Automation
 
-__To delete a project__
+3. __To delete a project__
 
-3. `project delete <project name>`
+   `project delete <project name>`
 
 Example:
  
     $ project delete new project
     Project "new project" is deleted successfully
 
-__To print repository details__
+4. __To print repository details__
 
-4. `project repo <repo name>`
+   `project repo <repo name>`
  
 Example:
  
@@ -136,9 +136,9 @@ Example:
     SSH URL: git@github.com:braindotai/Dr-Deep.git
     =======================================
 
-__To list all repositories__
+5. __To list all repositories__
 
-5. `project repo list`
+   `project repo list`
  
 Example:
  
@@ -156,17 +156,17 @@ Example:
     11. Reinforcement-Learning-Scratch-Arena
     12. Shell-Python-Project-Automation
 
-__To delete a repository__
+6. __To delete a repository__
 
-6. `project repo delete <repository name>`
+   `project repo delete <repository name>`
  
 Example:
  
     $ project repo delete new project
     Repository "new project" is deleted successfully
 
-__For help you can run__
+7. __For help you can run__
 
-7. `project help`
+   `project help`
 
 # __Your Welcome__
