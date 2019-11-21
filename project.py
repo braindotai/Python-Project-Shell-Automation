@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os
 import sys
+import socket
 from github import Github
 
 project_path = os.environ.get("PROJECT_PATH")
@@ -12,14 +13,27 @@ def rmspace(name):
 	return name.replace(" ", "-")
 
 def git():
-	return Github(os.environ.get("GITHUB_USERNAME"), os.environ.get("GITHUB_PASSWORD"))
+	if check_connected("www.google.com"):
+		return Github(os.environ.get("GITHUB_USERNAME"), os.environ.get("GITHUB_PASSWORD"))
+	print("Github connection failed..... system is not connected to internet")
+	sys.exit(1)
 
 def get_repos():
 	return [repo.name for repo in git().get_user().get_repos()]
 
+def check_connected(hostname):
+    try:
+        host = socket.gethostbyname(hostname)
+        s = socket.create_connection((host, 80), 2)
+        s.close()
+        return True
+    except:
+    	pass
+    return False
 
 if len(args) == 1:
 	print("Command name is required")
+	print('For help run "project help"')
 
 elif args[1] == "help":
 	print("\nproject create: To create a new project")
