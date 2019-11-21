@@ -151,7 +151,6 @@ elif "delete" in args:
 	name = ' '.join(args[2:])
 	projects = os.listdir(project_path)
 	if name in projects or rmspace(name) in projects:
-		print(name)
 		os.system('rm -rf "' + project_path + name + '"')
 		os.system('rm -rf "' + project_path + rmspace(name) + '"')
 		repos = get_repos()
