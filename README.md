@@ -24,6 +24,7 @@ You need to set 3 environment variables:
 Checkout these tutorials to get it done
 
 [For Mac/Linux](https://www.youtube.com/watch?v=5iWhQWVXosU)
+
 [For Windows](https://www.youtube.com/watch?v=IolxqkL7cD8)
 
 ### Step 2.
@@ -59,38 +60,38 @@ __To create a project__
 
 __Now that's marvelous!!__
 
-2. `project list`: To print names of projects existing in your PROJECT_PATH
+__2.__ `project list`: To print names of projects existing in your PROJECT_PATH
  
- Example:
+    Example:
  
- `project list`
+    `project list`
 
-3. `project delete`: To delete a project
+__3.__ `project delete`: To delete a project
 
- Example:
+    Example:
  
- `project delete project name`
+    `project delete project name`
 
-4. `project repo`: To print repository details
+__4.__ `project repo`: To print repository details
  
- Example:
+    Example:
  
- `project repo repo name`
+    `project repo repo name`
 
-5. `project repo list`: To list all repositories
+__5.__ `project repo list`: To list all repositories
  
- Example:
+    Example:
  
- `project repo list`
+    `project repo list`
 
-6. `project repo delete`: To delete a repository
+__6.__ `project repo delete`: To delete a repository
  
- Example:
+    Example:
  
- `project repo delete repository name`
+    `project repo delete repository name`
 
-7. For help you can run
+__7.__ For help you can run
 
- `project help`
+    `project help`
 
 # __Your Welcome__
