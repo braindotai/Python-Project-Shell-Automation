@@ -62,31 +62,31 @@ __Now that's marvelous!!__
 
 __2.__ `project list`: To print names of projects existing in your PROJECT_PATH
  
-    Example:
+Example:
  
     `project list`
 
 __3.__ `project delete`: To delete a project
 
-    Example:
+Example:
  
     `project delete project name`
 
 __4.__ `project repo`: To print repository details
  
-    Example:
+Example:
  
     `project repo repo name`
 
 __5.__ `project repo list`: To list all repositories
  
-    Example:
+Example:
  
     `project repo list`
 
 __6.__ `project repo delete`: To delete a repository
  
-    Example:
+Example:
  
     `project repo delete repository name`
 
