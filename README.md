@@ -1,4 +1,4 @@
-# __Shell Python Project Automation__
+# __Python Project Shell Automation__
 
 This project is inspired by __Kalle Hallden__
 
