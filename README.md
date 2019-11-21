@@ -28,6 +28,7 @@ If you are using windows, download [Git]("https://git-scm.com/download/win"), wh
 In the shell run:
 - `$ git clone https://github.com/braindotai/Shell-Python-Project-Automation.git`
 - `$ cd Shell-Python-Project-Automation`
+- `$ mv project.py project`
 - `$ chmod +x project`
 - `$ mkdir ~/bin`
 - `$ cp project ~/bin"`
