@@ -70,13 +70,13 @@ __3.__ `project delete`: To delete a project
 
 Example:
  
-    project delete project name
+    project delete <project name>
 
 __4.__ `project repo`: To print repository details
  
 Example:
  
-    project repo repo name
+    project repo <repo name>
 
 __5.__ `project repo list`: To list all repositories
  
@@ -88,7 +88,7 @@ __6.__ `project repo delete`: To delete a repository
  
 Example:
  
-    project repo delete repository name
+    project repo delete <repository name>
 
 __7.__ For help you can run
 
