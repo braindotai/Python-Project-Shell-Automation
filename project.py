@@ -149,7 +149,7 @@ elif args[1] == "repo":
 
 		print("Private:", repo.private)
 		print("Starts:", repo.stargazers_count)
-		print("Forked", repo.fork)
+		print("Forked:", repo.fork)
 		print("Forks:", repo.forks)
 		print("Watchers:", repo.watchers_count)
 		print("Language:", repo.language)

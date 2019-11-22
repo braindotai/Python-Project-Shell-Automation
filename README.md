@@ -13,6 +13,9 @@ In this repo I've provided my version of shell automation for python projects, l
 
 - Install [VS Code](https://code.visualstudio.com/download)
 - If you are using windows, download [Git](https://git-scm.com/download/win), which will install Git Bash as well. Then open Git Bash and run following commands
+- Install PyGithub library for python
+
+`$ pip install PyGithub`
 
 ### Step 1.
 You need to set 3 environment variables:
