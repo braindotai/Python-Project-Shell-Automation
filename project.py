@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import os
 import sys
 import socket
@@ -62,10 +62,11 @@ elif args[1] == "help":
 
 
 elif args[1] == "create":
-	try:
+	if len(args) > 2:
 		name = args[2]
-	except:
-		raise ValueError("Project name is required")
+	else:
+		print("Project name is required")
+		sys.exit(1)
 	try:
 		description = args[3]
 	except:
@@ -110,13 +111,15 @@ elif args[1] == "list":
 
 elif args[1] == "repo":
 	if len(args) == 2:
-		raise ValueError("Repository name is required")
+		print("Repository name is required")
+		sys.exit(1)
 	elif args[2] == "list":
 		for i, repo in enumerate(git().get_user().get_repos()):
 			print(f"{i + 1}. {repo.name}")
 	elif args[2] == "delete":
 		if len(args) == 3:
-			raise ValueError("Repository name is required")
+			print("Repository name is required")
+			sys.exit(1)
 		else:
 			repos = get_repos()
 			name = ' '.join(args[3:])
