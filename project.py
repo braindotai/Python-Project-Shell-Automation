@@ -5,13 +5,13 @@ import socket
 from github import Github
 
 project_path = os.environ.get("PROJECT_PATH")
-
+BACKUP = "c:/users/brain/onedrive/projects"
 args = sys.argv
 SPACE = " " * 5
 
 def rmspace(name):
 	return name.replace(" ", "-")
-
+	
 def git():
 	if check_connected("www.google.com"):
 		return Github(os.environ.get("GITHUB_USERNAME"), os.environ.get("GITHUB_PASSWORD"))
@@ -125,6 +125,7 @@ elif args[1] == "repo":
 			name = ' '.join(args[3:])
 			if rmspace(name) not in repos:
 				print('Repository "' + rmspace(name) + '" not found')
+				print('Type "$ project repo list" to see all available repositories')
 			else:
 				repo = git().get_repo(os.environ.get("GITHUB_USERNAME") + "/" + rmspace(name))
 				repo.delete()
@@ -184,6 +185,18 @@ elif "delete" in args:
 		print('Project "' + name.replace("-", " ") + '" is deleted successfully')
 	else:
 		print('Project "' + name + '" is not found')
+		print('Run "$ project list" to see all available projects')
+
+elif "backup" in args:
+	name = ' '.join(args[2:])
+	projects = os.listdir(project_path)
+	if name in projects or name.title() in projects:
+		# shutil.copytree(project_path + name, BACKUP)
+		os.system(f'cp -r "{project_path + name.title()}" "{BACKUP}"')
+		print('Project "' + name + '" is backuped successfully')
+	else:
+		print('Project "' + name + '" is not found')
+		print('Run "$ project list" to see all available projects')
 
 else:
 	print("Envalid command")
