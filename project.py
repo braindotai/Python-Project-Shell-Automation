@@ -11,7 +11,7 @@ SPACE = " " * 5
 
 def rmspace(name):
 	return name.replace(" ", "-")
-	
+
 def git():
 	if check_connected("www.google.com"):
 		return Github(os.environ.get("GITHUB_USERNAME"), os.environ.get("GITHUB_PASSWORD"))
@@ -191,7 +191,7 @@ elif "backup" in args:
 	name = ' '.join(args[2:])
 	projects = os.listdir(project_path)
 	if name in projects or name.title() in projects:
-		# shutil.copytree(project_path + name, BACKUP)
+		os.system(f'rm -rf "{BACKUP + name.title()}"')
 		os.system(f'cp -r "{project_path + name.title()}" "{BACKUP}"')
 		print('Project "' + name + '" is backuped successfully')
 	else:
