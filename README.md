@@ -162,13 +162,23 @@ Example:
 6. __To delete a repository__
 
    `project repo delete <repository name>`
- 
+
 Example:
  
     $ project repo delete new project
     Repository "new project" is deleted successfully
 
-7. __For help you can run__
+7. __To create a backup of a project__
+
+    `project backup <project name>`
+
+Example:
+
+    $ project backup "shell python project automation"
+    Project "shell python project automation" is backuped successfully
+
+
+8. __For help you can run__
 
    `project help`
 
