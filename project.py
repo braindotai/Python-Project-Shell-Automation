@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 import os
 import sys
 import socket
@@ -131,7 +131,12 @@ elif args[1] == "repo":
 				print('Repository "' + name.replace("-", " ") + '" is deleted successfully')
 	else:
 		name = ' '.join(args[2:])
-		repo = git().get_repo(os.environ.get("GITHUB_USERNAME") + "/" + rmspace(name))
+		try: 
+			repo = git().get_repo(os.environ.get("GITHUB_USERNAME") + "/" + rmspace(name))
+		except:
+			print(f'Repository with name "{name}" is not found')
+			print('Type "$ project repo list" to see all available repositories')
+			sys.exit(1)
 		print("\n===============", name, "===============")
 		
 		print("Contents:")
