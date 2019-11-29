@@ -94,7 +94,23 @@ Example:
     4. Kaggle-Exploratory-Data-Analysis
     5. Shell Python Project Automation
 
-3. __To delete a project__
+3. __To open a project__
+
+    `project open <project name>`
+
+Example:
+
+    $ project open "shell python project automation"
+
+4. __To check directories of a project__
+
+    `project <project name>`
+
+Example:
+
+    $ project "shell python project automation"
+
+5. __To delete a project__
 
    `project delete <project name>`
 
@@ -103,7 +119,7 @@ Example:
     $ project delete new project
     Project "new project" is deleted successfully
 
-4. __To print repository details__
+6. __To print repository details__
 
    `project repo <repo name>`
  
@@ -139,7 +155,7 @@ Example:
     SSH URL: git@github.com:braindotai/Dr-Deep.git
     =======================================
 
-5. __To list all repositories__
+7. __To list all repositories__
 
    `project repo list`
  
@@ -159,7 +175,7 @@ Example:
     11. Reinforcement-Learning-Scratch-Arena
     12. Shell-Python-Project-Automation
 
-6. __To delete a repository__
+8. __To delete a repository__
 
    `project repo delete <repository name>`
 
@@ -168,7 +184,7 @@ Example:
     $ project repo delete new project
     Repository "new project" is deleted successfully
 
-7. __To create a backup of a project__
+9. __To create a backup of a project__
 
     `project backup <project name>`
 
@@ -178,7 +194,7 @@ Example:
     Project "shell python project automation" is backuped successfully
 
 
-8. __For help you can run__
+10. __For help you can run__
 
    `project help`
 
