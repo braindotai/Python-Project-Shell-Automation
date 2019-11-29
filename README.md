@@ -23,6 +23,8 @@ You need to set 3 environment variables:
 - `GITHUB_USERNAME`: Your github username
 - `GITHUB_PASSWORD`: Your github password
 - `PROJECT_PATH`: Path where you want to store all your projects
+- `BACKUP`: Path where you want to backup all your projects....
+I'd recommend setting it to onedrive path, which periodically syncs all your files within onedrive to cloud
 
 Checkout these tutorials to get it done
 
@@ -196,6 +198,6 @@ Example:
 
 10. __For help you can run__
 
-   `project help`
+     `project help`
 
 # __Your Welcome__
