@@ -64,33 +64,41 @@ if len(args) == 1:
 	print('For help run "project help"')
 
 elif args[1] == "help":
-	print("\nproject create: To create a new project")
-	print(" Example:")
-	print(' project create "project name" "description" "private(True/False)" "official url"')
+	print("\n1. project create: To create a new project")
+	print("   Example:")
+	print('   project create "project name" "description" "private(True/False)" "official url"')
 	
-	print("\nproject list: To print names of existing projects")
-	print(" Example:")
-	print(' project list')
+	print("\n2. project list: To print names of existing projects")
+	print("   Example:")
+	print('   project list')
+
+	print("\n3. project <project name>: To view directories in a project")
+	print("   Example:")
+	print('   project "project name"')
+
+	print("\n4. project open: To open the project in VS Code")
+	print("   Example:")
+	print('   project open "project name"')
+
+	print("\n5. project backup: To backup the project")
+	print("   Example:")
+	print('   project backup "project name"')
 	
-	print("\nproject delete: To delete a project")
-	print(" Example:")
-	print(' project delete "project name"')
+	print("\n6. project delete: To delete a project")
+	print("   Example:")
+	print('   project delete "project name"')
 
-	print("\nproject repo: To print repository details")
-	print(" Example:")
-	print(' project repo "repo name"')
+	print("\n7. project repo: To print repository details")
+	print("   Example:")
+	print('   project repo "repo name"')
 
-	print("\nproject repo list: To list all repositories")
-	print(" Example:")
-	print(' project repo list')
+	print("\n8. project repo list: To list all repositories")
+	print("   Example:")
+	print('   project repo list')
 
-	print("\nproject repo delete: To delete a repository")
-	print(" Example:")
-	print(' project repo delete "repository name"')
-
-	print("\nproject: To view directories in a project")
-	print(" Example:")
-	print(' project "repository name"')	
+	print("\n9. project repo delete: To delete a repository")
+	print("   Example:")
+	print('   project repo delete "repository name"')
 
 
 elif args[1] == "create":
