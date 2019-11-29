@@ -5,7 +5,7 @@ import socket
 from github import Github
 
 project_path = os.environ.get("PROJECT_PATH")
-BACKUP = os.environ.get("BACKUP")
+backup_path = os.environ.get("BACKUP_PATH")
 args = sys.argv
 SPACE = " " * 5
 
@@ -223,8 +223,8 @@ elif "backup" == args[1]:
 	name = ' '.join(args[2:])
 	projects = os.listdir(project_path)
 	if name in projects or name.title() in projects:
-		os.system(f'rm -rf "{BACKUP + name.title()}"')
-		os.system(f'cp -r "{project_path + name.title()}" "{BACKUP}"')
+		os.system(f'rm -rf "{backup_path + name.title()}"')
+		os.system(f'cp -r "{project_path + name.title()}" "{backup_path}"')
 		print('Project "' + name + '" is backuped successfully')
 	else:
 		print('Project "' + name + '" is not found')
