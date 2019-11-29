@@ -31,6 +31,34 @@ def check_connected(hostname):
     	pass
     return False
 
+def convert_bytes(num):
+    for x in ['bytes', 'KB', 'MB', 'GB', 'TB']:
+        if num < 1024.0:
+            return f"{num:.2f} {x}"
+        num /= 1024.0
+
+def get_size(file):    
+    path = project_path + file
+    
+    if os.path.isfile(path):
+        return convert_bytes(os.path.getsize(path))
+
+    total_size = 0.0
+    for dirpath, dirnames, filenames in os.walk(path):
+        for f in filenames:
+            fp = os.path.join(dirpath, f)
+            if not os.path.islink(fp):
+            	try:
+            		total_size += os.path.getsize(fp)
+            	except:
+            		pass
+    return convert_bytes(total_size)
+
+def spaceprint(name, size):
+    space = SIZE - len(name)
+    print(name, end = "")
+    print(" " * space, size)
+    
 if len(args) == 1:
 	print("Command name is required")
 	print('For help run "project help"')
@@ -38,7 +66,7 @@ if len(args) == 1:
 elif args[1] == "help":
 	print("\nproject create: To create a new project")
 	print(" Example:")
-	print(' project create "project name" "description" "private(True/False)" "homepage(url)"')
+	print(' project create "project name" "description" "private(True/False)" "official url"')
 	
 	print("\nproject list: To print names of existing projects")
 	print(" Example:")
@@ -59,6 +87,10 @@ elif args[1] == "help":
 	print("\nproject repo delete: To delete a repository")
 	print(" Example:")
 	print(' project repo delete "repository name"')
+
+	print("\nproject: To view directories in a project")
+	print(" Example:")
+	print(' project "repository name"')	
 
 
 elif args[1] == "create":
@@ -170,7 +202,7 @@ elif args[1] == "repo":
 
 		
 
-elif "delete" in args:
+elif "delete" == args[1]:
 	name = ' '.join(args[2:])
 	projects = os.listdir(project_path)
 	if name in projects or rmspace(name) in projects:
@@ -187,7 +219,7 @@ elif "delete" in args:
 		print('Project "' + name + '" is not found')
 		print('Run "$ project list" to see all available projects')
 
-elif "backup" in args:
+elif "backup" == args[1]:
 	name = ' '.join(args[2:])
 	projects = os.listdir(project_path)
 	if name in projects or name.title() in projects:
@@ -198,6 +230,44 @@ elif "backup" in args:
 		print('Project "' + name + '" is not found')
 		print('Run "$ project list" to see all available projects')
 
+elif "open" == args[1]:
+	name = ' '.join(args[2:])
+	projects = os.listdir(project_path)
+	if name in projects or name.title() in projects:
+		os.system(f'code "{project_path + name.title()}"')
+	else:
+		print('Project "' + name + '" is not found')
+		print('Run "$ project list" to see all available projects')
+
 else:
-	print("Envalid command")
-	print('Run "project help" for more info')
+	name = ' '.join(args[1:])
+	projects = os.listdir(project_path)
+	if name in projects or name.title() in projects:
+		SIZE = 30
+		PLUS = 0
+		dirs = os.listdir(project_path + name)
+		files = []
+		folders = []
+
+		for file in dirs:
+			if os.path.isfile(project_path + name + "/" + file):
+				files.append(file)
+			else:
+				folders.append(file)
+			if len(file) > SIZE:
+			    PLUS += 4
+			    SIZE += PLUS
+
+		print("============= FOLDERS =============")
+		for file in folders:
+			spaceprint(file, get_size(name + "/" + file))
+		print("")
+
+		print("============== FILES ==============")
+		for file in files:
+		    spaceprint(file, get_size(name + "/" + file))
+
+
+	else:
+		print("Envalid command")
+		print('Run "project help" for more info')
