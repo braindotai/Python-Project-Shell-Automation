@@ -5,7 +5,7 @@ import socket
 from github import Github
 
 project_path = os.environ.get("PROJECT_PATH")
-BACKUP = "c:/users/brain/onedrive/projects/"
+BACKUP = os.environ.get("BACKUP")
 args = sys.argv
 SPACE = " " * 5
 
