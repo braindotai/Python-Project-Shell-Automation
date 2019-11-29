@@ -100,7 +100,7 @@ Example:
 
 Example:
 
-    $ project open "shell python project automation"
+    $ project open shell python project automation
 
 4. __To check directories of a project__
 
@@ -108,7 +108,7 @@ Example:
 
 Example:
 
-    $ project "shell python project automation"
+    $ project shell python project automation
 
 5. __To delete a project__
 
@@ -190,7 +190,7 @@ Example:
 
 Example:
 
-    $ project backup "shell python project automation"
+    $ project backup shell python project automation
     Project "shell python project automation" is backuped successfully
 
 
