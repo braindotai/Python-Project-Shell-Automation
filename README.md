@@ -96,10 +96,18 @@ Then go back to working directory
 - Then push the initial commit to master repo
 - Then opens the VS Code through that project directory
 
-
 __Now that's marvelous!!__
 
-2. __To print names of projects existing in your PROJECT_PATH__
+2. __Setting the environment variables for you're project__
+
+    You can set you're environment variables in the .vars file.
+
+    ```python
+    USERNAME = 'my username'
+    PASSWORD = 'my passward'
+    ``` 
+
+3. __To print names of projects existing in your PROJECT_PATH__
 
    `project list`
  
@@ -112,7 +120,7 @@ Example:
     4. Kaggle-Exploratory-Data-Analysis
     5. Shell Python Project Automation
 
-3. __To open a project__
+4. __To open a project__
 
     `project open <project name>`
 
@@ -120,7 +128,7 @@ Example:
 
     $ project open shell python project automation
 
-4. __To check directories of a project__
+5. __To check directories of a project__
 
     `project <project name>`
 
@@ -128,7 +136,7 @@ Example:
 
     $ project shell python project automation
 
-5. __To delete a project__
+6. __To delete a project__
 
    `project delete <project name>`
 
@@ -137,7 +145,7 @@ Example:
     $ project delete new project
     Project "new project" is deleted successfully
 
-6. __To print repository details__
+7. __To print repository details__
 
    `project repo <repo name>`
  
@@ -173,7 +181,7 @@ Example:
     SSH URL: git@github.com:braindotai/Dr-Deep.git
     =======================================
 
-7. __To list all repositories__
+8. __To list all repositories__
 
    `project repo list`
  
@@ -193,7 +201,7 @@ Example:
     11. Reinforcement-Learning-Scratch-Arena
     12. Shell-Python-Project-Automation
 
-8. __To delete a repository__
+9. __To delete a repository__
 
    `project repo delete <repository name>`
 
@@ -202,7 +210,7 @@ Example:
     $ project repo delete new project
     Repository "new project" is deleted successfully
 
-9. __To create a backup of a project__
+10. __To create a backup of a project__
 
     `project backup <project name>`
 
@@ -212,7 +220,7 @@ Example:
     Project "shell python project automation" is backuped successfully
 
 
-10. __For help you can run__
+11. __For help you can run__
 
      `project help`
 
