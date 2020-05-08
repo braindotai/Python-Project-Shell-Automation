@@ -291,13 +291,14 @@ elif "open" == args[1]:
 	projects = os.listdir(project_path)
 	if name in projects or name.title() in projects:
 		os.system(f'code "{project_path + name.title()}"')
-		time.sleep(4)
-		auto.keyDown('shift')
-		auto.press('space')
-		auto.keyUp('shift')
-		time.sleep(1.5)
-		auto.typewrite('source venv/scripts/activate')
-		auto.press('enter')
+		time.sleep(3)
+		if 'venv' in os.listdir(project_path + name.title()):
+			auto.keyDown('shift')
+			auto.press('space')
+			auto.keyUp('shift')
+			time.sleep(1.5)
+			auto.typewrite('source venv/scripts/activate')
+			auto.press('enter')
 
 	else:
 		print('Project "' + name + '" is not found')
