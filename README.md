@@ -22,6 +22,7 @@ In this repo I've provided my version of shell automation for python projects, l
    `$ pip3 install pyautogui`
 
 - Install Python-dotenv, for handeling environment variables in the virtual environment.
+
    `$ pip3 install python-dotenv`
 
 ### Step 1.
