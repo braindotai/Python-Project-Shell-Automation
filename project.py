@@ -2,6 +2,8 @@
 import os
 import sys
 import socket
+import time
+import pyautogui as auto
 from github import Github
 
 project_path = os.environ.get("PROJECT_PATH")
@@ -126,23 +128,67 @@ elif args[1] == "create":
 		print(f'Project with name "{name}" already exists')
 		name = input("Enter new name: ").replace('"', "")
 
-	user = git().get_user()
-	user.create_repo(name = name, description = description, homepage = homepage, private = private)
 	print("")
-	os.system(f"echo ============= Initiating project: {name} =============")
+	print(f"[============= Initiating project: {name} =============]")
 	print("")
 	os.chdir(project_path)
 	os.mkdir(name)
 	os.chdir(project_path + name)
-	os.system('git init')
-	os.system('git remote add origin https://github.com/braindotai/' + name.replace(" ", "-") + '.git')
+	
+	print("Creating Readme file ....")
 	open("README.md", "w")
+	
+	print("Creating Environment Variables ....")
+	open(".vars", "w")
+	
+	print("Creating Virtual Environment ....")
+	os.system("python -m venv venv")
+
+	print("Initiating Git Integration ....")
+	os.system('git init')
+
+	gitignore = open(".gitignore", "w")
+	gitignore.write("venv\n")
+	gitignore.write(".vars\n")
+	gitignore.write("*.pyc")
+	gitignore.write("__pycache__")
+	gitignore.close()
+
+	if check_connected("www.google.com"):
+		github = Github(os.environ.get("GITHUB_USERNAME"), os.environ.get("GITHUB_PASSWORD"))
+	else:
+		github = False
+
 	os.system('git add .')
 	os.system('git commit -m "Initial Commit"')
-	os.system('git push -u origin master')
+
+	if github:
+		github.get_user().create_repo(name = name, description = description, homepage = homepage, private = private)
+		print("Adding remote URL")
+		os.system('git remote add origin https://github.com/braindotai/' + name.replace(" ", "-") + '.git')
+		print("Pushing initial commit ....")
+		os.system('git push -u origin master')
+	else:
+		print("Skipping remote URL integration")
+
+	print("Opening project")
 	os.system('code .')
 	print("")
-	os.system(f"echo ============= Project initiated successfully =============")
+	print(f"[============= Project initiated successfully =============]")
+
+	time.sleep(4)
+	auto.keyDown('shift')
+	auto.press('space')
+	auto.keyUp('shift')
+	time.sleep(1.5)
+	auto.typewrite('source venv/scripts/activate')
+	auto.press('enter')
+
+	if github:
+		time.sleep(1)
+		auto.typewrite('python -m pip install --upgrade pip')
+		auto.press('enter')
+
 
 elif args[1] == "list":
 	projects = os.listdir(project_path)
@@ -213,13 +259,15 @@ elif args[1] == "repo":
 elif "delete" == args[1]:
 	name = ' '.join(args[2:])
 	projects = os.listdir(project_path)
-	if name in projects or rmspace(name) in projects:
+	if name in projects or name.title() in projects or rmspace(name) in projects:
+		print(f'Deleting project "{name}" from Projects directory')
 		os.system('rm -rf "' + project_path + name + '"')
 		os.system('rm -rf "' + project_path + rmspace(name) + '"')
 		repos = get_repos()
-		if rmspace(name) not in repos:
+		if rmspace(name.title()) not in repos and rmspace(name) not in repos:
 			print('Repository "' + rmspace(name) + '" not found...... skipping repository deletion')
 		else:
+			print(f'Deleting project "{name}" from Github')
 			repo = git().get_repo(os.environ.get("GITHUB_USERNAME") + "/" + rmspace(name))
 			repo.delete()
 		print('Project "' + name.replace("-", " ") + '" is deleted successfully')
@@ -243,6 +291,14 @@ elif "open" == args[1]:
 	projects = os.listdir(project_path)
 	if name in projects or name.title() in projects:
 		os.system(f'code "{project_path + name.title()}"')
+		time.sleep(4)
+		auto.keyDown('shift')
+		auto.press('space')
+		auto.keyUp('shift')
+		time.sleep(1.5)
+		auto.typewrite('source venv/scripts/activate')
+		auto.press('enter')
+
 	else:
 		print('Project "' + name + '" is not found')
 		print('Run "$ project list" to see all available projects')

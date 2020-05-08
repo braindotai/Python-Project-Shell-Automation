@@ -13,9 +13,15 @@ In this repo I've provided my version of shell automation for python projects, l
 
 - Install [VS Code](https://code.visualstudio.com/download)
 - If you are using windows, download [Git](https://git-scm.com/download/win), which will install Git Bash as well. Then open Git Bash and run following commands
-- Install PyGithub library for python
+- Install PyGithub, for GitHub integration.
 
    `$ pip3 install PyGithub`
+
+- Install Pyautogui, for automating keyboard to activate the virtual environment, and upgrade the pip.
+   `$ pip3 install pyautogui`
+
+- Install Python-dotenv, for handeling environment variables in the virtual environment.
+   `$ pip3 install python-dotenv`
 
 ### Step 1.
 You need to set 3 environment variables:
@@ -34,7 +40,7 @@ Checkout these tutorials to get it done
 
 ### Step 2.
 
-In the shell run:
+In the shell, run the following commands:
 - `$ git clone https://github.com/braindotai/Shell-Python-Project-Automation.git`
 - `$ cd Shell-Python-Project-Automation`
 - `$ mv project.py project`
@@ -53,23 +59,33 @@ Then go back to working directory
 
  Example:
 
-    $ project create "new project" "this is my description" "False"
+    $ project create "new project" "this is my description for GitHub repository" "False"
 
-    ============= Initiating project: new project =============
+    [============= Initiating project: new project =============]
 
+    Creating Readme file ....
+    Creating Environment Variables ....
+    Creating Virtual Environment ....
+    Initiating Git Integration ....
     Initialized empty Git repository in C:/Users/brain/Desktop/Projects/new project/.git/
-    [master (root-commit) 3255f0d] Initial Commit
-    1 file changed, 0 insertions(+), 0 deletions(-)
+    [master (root-commit) b2963d5] Initial Commit
+    2 files changed, 3 insertions(+)
+    create mode 100644 .gitignore
     create mode 100644 README.md
-    Enumerating objects: 3, done.
-    Counting objects: 100% (3/3), done.
-    Writing objects: 100% (3/3), 222 bytes | 222.00 KiB/s, done.
-    Total 3 (delta 0), reused 0 (delta 0)
-    To https://github.com/braindotai/new-project.git
+    Adding remote URL
+    Pushing initial commit ....
+    Enumerating objects: 4, done.
+    Counting objects: 100% (4/4), done.
+    Delta compression using up to 8 threads
+    Compressing objects: 100% (2/2), done.
+    Writing objects: 100% (4/4), 282 bytes | 282.00 KiB/s, done.
+    Total 4 (delta 0), reused 0 (delta 0)
+    To https://github.com/braindotai/new-project-name.git
     * [new branch]      master -> master
     Branch 'master' set up to track remote branch 'master' from 'origin'.
+    Opening project
 
-    ============= Project initiated successfully =============
+    [============= Project initiated successfully =============]
 
 - This creates a project named "new project" in your "PROJECT_PATH"
 - And sets that directory as github master repository
