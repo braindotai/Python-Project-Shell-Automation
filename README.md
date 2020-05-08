@@ -18,6 +18,7 @@ In this repo I've provided my version of shell automation for python projects, l
    `$ pip3 install PyGithub`
 
 - Install Pyautogui, for automating keyboard to activate the virtual environment, and upgrade the pip.
+
    `$ pip3 install pyautogui`
 
 - Install Python-dotenv, for handeling environment variables in the virtual environment.
@@ -98,7 +99,7 @@ Then go back to working directory
 
 __Now that's marvelous!!__
 
-2. __Setting the environment variables for you're project__
+2. __Setting up you're project's environment variables__
 
     You can set you're environment variables in the .vars file.
 
